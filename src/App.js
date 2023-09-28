@@ -1,8 +1,36 @@
 import "./App.css";
+import Signup from "./features/auth/component/Signup";
 import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+
+// Router
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (<Home/>),
+  },
+  {
+    path: "/login",
+    element:<LoginPage/>,
+  },
+
+  {
+    path: "/signup",
+    element:<Signup/>,
+  },
+
+])
 function App() {
   return <div className="App ">
-    <Home/>
+   <RouterProvider router={router}/>
   </div>;
 }
 
