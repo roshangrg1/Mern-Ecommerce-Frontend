@@ -1,8 +1,10 @@
 import "./App.css";
-import Signup from "./features/auth/component/Signup";
+import ProductDetail from "./features/product/component/ProductDetail";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import SignupPage from "./pages/SignupPage";
 
 // Router
@@ -25,12 +27,22 @@ const router = createBrowserRouter([
 
   {
     path: "/signup",
-    element:<Signup/>,
+    element:<SignupPage/>,
   },
 
   {
     path: "/cart",
     element:<CartPage/>,
+  },
+
+  {
+    path: "/checkout",
+    element:<CheckoutPage/>,
+  },
+
+  {
+    path: "/product-detail",
+    element:<ProductDetailPage/>,
   },
 
 ])
