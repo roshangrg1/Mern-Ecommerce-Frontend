@@ -4,6 +4,7 @@ import {
   fetchAllProductsAsync,
   fetchProductsByFiltersAsync,
   selectAllProducts,
+  selectTotalItems
 } from "../productSlice";
 
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
@@ -18,6 +19,7 @@ import {
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { ITEMS_PER_PAGE } from '../../../app/constants'
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
@@ -237,47 +239,62 @@ export default function ProductList() {
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const products = useSelector(selectAllProducts);
+  const totalItems = useSelector(selectTotalItems);
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
+  const [page, setPage] = useState(1);
   // console.log("Current Filter:", filter);
 
   const handleFilter = (e, section, option) => {
     // e.preventDefault();
-    const newFilter ={...filter}
+    const newFilter = { ...filter }
     console.log(e.target.checked)
     // TODO : on server it will support multiple categories
-    if(e.target.checked){
-      if(newFilter[section.id]){
+    if (e.target.checked) {
+      if (newFilter[section.id]) {
         newFilter[section.id].push(option.value)
       }
-      else{
-        newFilter[section.id]=[option.value]
+      else {
+        newFilter[section.id] = [option.value]
       }
-      
+
     }
-    else{
-      
-      const index =newFilter[section.id].findIndex(el=>el===option.value)
-        newFilter[section.id].splice(index,1)
+    else {
+
+      const index = newFilter[section.id].findIndex(el => el === option.value)
+      newFilter[section.id].splice(index, 1)
     }
     console.log(newFilter)
     setFilter(newFilter);
     // console.log("New Filter:", newFilter);
     // dispatch(fetchProductsByFiltersAsync(newFilter));
     // console.log(section.id, option.value);
-  }; 
+  };
 
   const handleSort = (e, option) => {
     // e.preventDefault();
-    const sort = {  _sort: option.sort, _order: option.order };
-     console.log(sort);
+    const sort = { _sort: option.sort, _order: option.order };
+    console.log(sort);
     setSort(sort);
-  
+
+  };
+
+  const handlePage = (page) => {
+    console.log({page})
+    setPage(page);
   };
 
   useEffect(() => {
-    dispatch(fetchProductsByFiltersAsync(filter,sort));
-  }, [dispatch,filter,sort]); 
+    const pagination = { _page:page, _limit:ITEMS_PER_PAGE }
+    // console.log(pagination)   it displays limit on console too
+    dispatch(fetchProductsByFiltersAsync({filter, sort, pagination}));
+    
+
+  }, [dispatch, filter, sort, page]);
+  
+  useEffect(()=>{
+    setPage(1)
+  }, [totalItems,sort])
 
   return (
     <div>
@@ -382,7 +399,7 @@ export default function ProductList() {
 
               {/* pagination */}
               <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-4 sm:px-6">
-                <Pagination></Pagination>
+                <Pagination page={page} setPage={setPage} handlePage={handlePage} totalItems={totalItems}></Pagination>
               </div>
             </main>
           </div>
@@ -566,7 +583,7 @@ function DesktopFilter({ handleFilter }) {
   );
 }
 
-function Pagination() {
+function Pagination({ page, setPage, handlePage, totalItems }) {
   return (
     <>
       <div className="flex flex-1 justify-between sm:hidden">
@@ -586,9 +603,9 @@ function Pagination() {
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">1</span> to{" "}
-            <span className="font-medium">10</span> of{" "}
-            <span className="font-medium">97</span> results
+            Showing <span className="font-medium">{(page - 1) * ITEMS_PER_PAGE + 1}</span> to{" "}
+            <span className="font-medium">{page * ITEMS_PER_PAGE > totalItems ? totalItems : page* ITEMS_PER_PAGE}</span> of{" "}
+            <span className="font-medium">{totalItems}</span> results
           </p>
         </div>
         <div>
@@ -604,35 +621,16 @@ function Pagination() {
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </a>
             {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-            <a
-              href="#"
-              aria-current="page"
-              className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-            >
-              2
-            </a>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              3
-            </a>
-            <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">
-              ...
-            </span>
-            <a
-              href="#"
-              className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              8
-            </a>
 
+            {Array.from({ length: Math.ceil(totalItems/ITEMS_PER_PAGE) }).map((el,index) =>
+            (<div
+              onClick={(e)=>handlePage(index+1)}
+              aria-current="page"
+              className={`relative z-10 inline-flex items-center cursor-pointer ${index+1===page ? 'bg-indigo-600 text-gray-300' : 'border border-gray-300 bg-[#e4dfdf] text-[#616C6F]'}  px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+            >
+              {index+1}
+            </div>))
+            }
             <a
               href="#"
               className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
