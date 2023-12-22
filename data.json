@@ -2360,5 +2360,28 @@
       "password": "Jhapa100",
       "id": 5
     }
+  ],
+  "cart": [
+    {
+      "id": 37,
+      "title": "ank Tops for Womens/Girls",
+      "description": "PACK OF 3 CAMISOLES ,VERY COMFORTABLE SOFT COTTON STUFF, COMFORTABLE IN ALL FOUR SEASONS",
+      "price": 50,
+      "discountPercentage": 12.05,
+      "rating": 4.52,
+      "stock": 107,
+      "brand": "Soft Cotton",
+      "category": "tops",
+      "thumbnail": "https://i.dummyjson.com/data/products/37/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/37/1.jpg",
+        "https://i.dummyjson.com/data/products/37/2.jpg",
+        "https://i.dummyjson.com/data/products/37/3.jpg",
+        "https://i.dummyjson.com/data/products/37/4.jpg",
+        "https://i.dummyjson.com/data/products/37/thumbnail.jpg"
+      ],
+      "quantity": 5,
+      "user": 2
+    }
   ]
 }
