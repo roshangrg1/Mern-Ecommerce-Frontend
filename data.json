@@ -2338,50 +2338,267 @@
     {
       "email": "workwithroshan2020@gmail.com",
       "password": "Jhapa100",
+      "addresses": [
+        {
+          "name": "Roshan Guragain",
+          "email": "workwithroshan2020@gmail.com",
+          "phone": "+9779827935643",
+          "street": "01 mechinagar",
+          "city": "Dhulabari",
+          "state": "Koshi",
+          "pinCode": "57027"
+        },
+        {
+          "name": "Roshan Guragain",
+          "email": "workwithroshan2020@gmail.com",
+          "phone": "+9779827935643",
+          "street": "01 mechinagar",
+          "city": "Dhulabari",
+          "state": "Koshi",
+          "pinCode": "57027"
+        }
+      ],
       "id": 1
     },
     {
       "email": "workwithroshan202@gmail.com",
       "password": "Jhapa100",
+      "addresses": [],
       "id": 2
     },
     {
       "email": "workwithroshan2020@gmail.com",
       "password": "Jhapa100",
+      "addresses": [],
       "id": 3
     },
     {
       "email": "workwithroshan2020@gmail.com",
       "password": "Jhapa100",
+      "addresses": [],
       "id": 4
     },
     {
       "email": "test@gmail.com",
       "password": "Jhapa100",
+      "addresses": [],
       "id": 5
     }
   ],
   "cart": [
     {
-      "id": 37,
-      "title": "ank Tops for Womens/Girls",
-      "description": "PACK OF 3 CAMISOLES ,VERY COMFORTABLE SOFT COTTON STUFF, COMFORTABLE IN ALL FOUR SEASONS",
-      "price": 50,
-      "discountPercentage": 12.05,
-      "rating": 4.52,
-      "stock": 107,
-      "brand": "Soft Cotton",
-      "category": "tops",
-      "thumbnail": "https://i.dummyjson.com/data/products/37/thumbnail.jpg",
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/37/1.jpg",
-        "https://i.dummyjson.com/data/products/37/2.jpg",
-        "https://i.dummyjson.com/data/products/37/3.jpg",
-        "https://i.dummyjson.com/data/products/37/4.jpg",
-        "https://i.dummyjson.com/data/products/37/thumbnail.jpg"
+        "https://i.dummyjson.com/data/products/3/1.jpg"
       ],
-      "quantity": 5,
-      "user": 2
+      "quantity": 1,
+      "user": 2,
+      "id": 1
+    },
+    {
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg"
+      ],
+      "quantity": 1,
+      "user": 1,
+      "id": 2
+    },
+    {
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ],
+      "quantity": 1,
+      "user": 1,
+      "id": 3
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        },
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 3
+        }
+      ],
+      "totalAmount": 2998,
+      "totalItems": 2,
+      "user": {
+        "email": "workwithroshan2020@gmail.com",
+        "password": "Jhapa100",
+        "addresses": [
+          {
+            "name": "Roshan Guragain",
+            "email": "workwithroshan2020@gmail.com",
+            "phone": "+9779827935643",
+            "street": "01 mechinagar",
+            "city": "Dhulabari",
+            "state": "Koshi",
+            "pinCode": "57027"
+          },
+          {
+            "name": "Roshan Guragain",
+            "email": "workwithroshan2020@gmail.com",
+            "phone": "+9779827935643",
+            "street": "01 mechinagar",
+            "city": "Dhulabari",
+            "state": "Koshi",
+            "pinCode": "57027"
+          }
+        ],
+        "id": 1
+      },
+      "payementMethod": "cash",
+      "selectedAddress": {
+        "name": "Roshan Guragain",
+        "email": "workwithroshan2020@gmail.com",
+        "phone": "+9779827935643",
+        "street": "01 mechinagar",
+        "city": "Dhulabari",
+        "state": "Koshi",
+        "pinCode": "57027"
+      },
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        },
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 3
+        }
+      ],
+      "totalAmount": 2998,
+      "totalItems": 2,
+      "user": {
+        "email": "workwithroshan2020@gmail.com",
+        "password": "Jhapa100",
+        "addresses": [
+          {
+            "name": "Roshan Guragain",
+            "email": "workwithroshan2020@gmail.com",
+            "phone": "+9779827935643",
+            "street": "01 mechinagar",
+            "city": "Dhulabari",
+            "state": "Koshi",
+            "pinCode": "57027"
+          },
+          {
+            "name": "Roshan Guragain",
+            "email": "workwithroshan2020@gmail.com",
+            "phone": "+9779827935643",
+            "street": "01 mechinagar",
+            "city": "Dhulabari",
+            "state": "Koshi",
+            "pinCode": "57027"
+          }
+        ],
+        "id": 1
+      },
+      "payementMethod": "cash",
+      "selectedAddress": {
+        "name": "Roshan Guragain",
+        "email": "workwithroshan2020@gmail.com",
+        "phone": "+9779827935643",
+        "street": "01 mechinagar",
+        "city": "Dhulabari",
+        "state": "Koshi",
+        "pinCode": "57027"
+      },
+      "id": 2
     }
   ]
 }
