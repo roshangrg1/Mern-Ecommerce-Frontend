@@ -9,10 +9,10 @@ import {
 } from "../features/cart/CartSlice";
 import { useForm } from "react-hook-form";
 import {
-  selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
 import { createOrderAsync, selectCurrentOrder,  } from "../features/order/orderSlice";
+import { selectUserInfo } from "../features/user/userSlice";
 
 const CheckoutPage = () => {
   const [open, setOpen] = useState(true);
@@ -24,7 +24,7 @@ const CheckoutPage = () => {
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
   const items = useSelector(selectItems);
   const currentOrder = useSelector(selectCurrentOrder);
 
