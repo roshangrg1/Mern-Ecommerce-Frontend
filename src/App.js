@@ -28,6 +28,9 @@ import OrderSuccessPage from "./pages/OrderSuccessPage";
 import { fetchLoggedInUserAsync } from "./features/user/userSlice";
 import Logout from "./features/auth/component/Logout";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ProtectedAdmin from "./features/auth/component/ProtectedAdmin";
+import AdminHome from "./pages/AdminHome";
+import AdminProductFormPage from "./pages/AdminProductFormPage";
 
 
 
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (<Protected><Home/></Protected>),
+  },
+  {
+    path: "/admin",
+    element: (<ProtectedAdmin><AdminHome/></ProtectedAdmin>),
   },
   {
     path: "/login",
@@ -59,6 +66,29 @@ const router = createBrowserRouter([
   {
     path: "/product-detail/:id",
     element:<Protected><ProductDetailPage/></Protected>,
+  },
+
+  {
+    path: "/admin/product-detail/:id",
+    element:<ProtectedAdmin><ProductDetailPage/></ProtectedAdmin>,
+  },
+
+  {
+    path: '/admin/product-form',
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+
+  {
+    path: '/admin/product-form/edit/:id',
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
   },
 
   {
@@ -107,6 +137,7 @@ function App() {
   }, [dispatch, user])
   return <div className="App ">
    <RouterProvider router={router}/>
+   {/* Link must indide provider */}
   </div>;
 }
 

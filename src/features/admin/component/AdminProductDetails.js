@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch  } from "react-redux";
-import { fetchProductByIdAsync, selectProductById,  } from '../productSlice';
+import { fetchAllProductByIdAsync, selectProductById,  } from '../../product/productSlice';
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import {useParams} from 'react-router-dom'
@@ -37,7 +37,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ProductDetail() {
+export default function AdminProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0])
   const [selectedSize, setSelectedSize] = useState(sizes[2])
   const user = useSelector(selectLoggedInUser)
@@ -56,7 +56,7 @@ export default function ProductDetail() {
   
 
   useEffect(()=>{
-    dispatch(fetchProductByIdAsync(params.id))
+    dispatch(fetchAllProductByIdAsync(params.id))
   }, [dispatch, params.id])
  
 
@@ -298,6 +298,7 @@ export default function ProductDetail() {
               <div className="mt-4 space-y-6">
                 <p className="text-sm text-gray-600">{product.description}</p>
               </div>
+              
             </div>
           </div>
         </div>
