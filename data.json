@@ -2356,7 +2356,17 @@
       "email": "workwithroshan202@gmail.com",
       "password": "Jhapa100",
       "role": "user",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "Aakash Poudel Khattri",
+          "email": "poudelaakash12345@gmail.com",
+          "phone": "9825952159",
+          "street": "Dhulabari, Jhapa",
+          "city": "Nepal",
+          "state": "iaijd",
+          "pinCode": "57206"
+        }
+      ],
       "id": 2
     },
     {
@@ -2389,23 +2399,6 @@
     }
   ],
   "cart": [
-    {
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ],
-      "quantity": 1,
-      "user": 2,
-      "id": 1
-    },
     {
       "title": "iPhone X",
       "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
@@ -2713,6 +2706,78 @@
       },
       "status": "pending",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 1
+        },
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 4
+        }
+      ],
+      "totalAmount": 2998,
+      "totalItems": 2,
+      "user": {
+        "email": "workwithroshan202@gmail.com",
+        "password": "Jhapa100",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Aakash Poudel Khattri",
+            "email": "poudelaakash12345@gmail.com",
+            "phone": "9825952159",
+            "street": "Dhulabari, Jhapa",
+            "city": "Nepal",
+            "state": "iaijd",
+            "pinCode": "57206"
+          }
+        ],
+        "id": 2
+      },
+      "payementMethod": "cash",
+      "selectedAddress": {
+        "name": "Aakash Poudel Khattri",
+        "email": "poudelaakash12345@gmail.com",
+        "phone": "9825952159",
+        "street": "Dhulabari, Jhapa",
+        "city": "Nepal",
+        "state": "iaijd",
+        "pinCode": "57206"
+      },
+      "status": "pending",
+      "id": 5
     }
   ]
 }
